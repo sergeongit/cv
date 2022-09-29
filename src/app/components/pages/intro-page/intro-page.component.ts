@@ -6,5 +6,5 @@ import { Component, } from '@angular/core';
     styleUrls: ['./intro-page.component.scss'],
 })
 export class IntroPageComponent {
-    myGithubLink = 'https://github.com/sergeongit/sergs_cv';
+    myGithubLink = 'https://github.com/sergeongit/cv';
 }
