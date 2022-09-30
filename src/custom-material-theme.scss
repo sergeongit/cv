@@ -70,6 +70,7 @@ snack-bar-container.mat-snack-bar-container {
 // TOOLTIP
 .mat-tooltip {
     &.-primary-bg {
+        border-radius: 0;
         background: $color-alert-info;
         font-size: 14px;
         line-height: 1;

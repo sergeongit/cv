@@ -1,4 +1,4 @@
-@import "../../../../variables";
+@import "src/variables";
 
 :host {
     display: flex;
@@ -28,14 +28,6 @@
         &:nth-child(4n + 5) {
             border-left: 31px dashed rgba(231, 222, 223, 0.04);
         }
-
-        //&.-advertising {
-        //    max-width: 210px;
-        //    max-height: 120px;
-        //    border-color: black;
-        //    background: url("/assets/ad.jpg") center no-repeat;
-        //    background-size: cover;
-        //}
 
         &.-empty {
             opacity: 0.02;
@@ -108,6 +100,7 @@
 @media all and (max-width: 1920px) {
     .tiles-box {
         height: 90%;
+        padding: 72px 48px;
 
         &__tile-container {
             padding: 32px 0 32px 64px;
@@ -122,10 +115,68 @@
     }
 }
 
+@media all and (max-width: 1920px) and (min-resolution: 1.1dppx){
+    .tiles-box {
+        height: 96%;
+        grid-template-columns: repeat(3, 350px);
+        padding: 48px 24px;
+    }
+}
+
 @media all and (max-width: 1366px) {
     .tiles-box {
+        height: 90%;
+        grid-template-columns: repeat(3, 280px);
+        padding: 48px 64px;
+
         &__tile-container {
-            //padding: 24px 0 24px 48px;
+            padding: 0;
         }
     }
+}
+
+@media all and (max-width: 1366px) and (min-resolution: 1.1dppx) {
+    .tiles-box {
+        &__tile {
+            a {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .tiles-box {
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, minmax(60px, 80px));
+        grid-gap: 16px;
+        padding: 16px;
+
+
+        &__tile-container {
+            transform: rotate(0deg);
+
+            &.about-me {
+                grid-column: span 2;
+            }
+
+            &:nth-child(4n + 5) {
+            border-left: 1px solid $color-alert-main;
+            }
+
+            &.-empty {
+                display: none;
+            }
+        }
+
+        &__tile {
+            a {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
 }
