@@ -121,6 +121,19 @@ a {
     }
 }
 
+//----------------------------------
+//  MIXINS
+@mixin addSpacingOfViewportFrame {
+    max-width: calc(100% - 32px);
+    padding: 16px 18px;
+}
+
+@media all and (max-width: 1200px) {
+    .text-container {
+        @include addSpacingOfViewportFrame;
+    }
+}
+
 @media all and (max-width: 1024px) {
     .main-text {
         font-size: 20px;
@@ -136,5 +149,12 @@ a {
                 height: 10px;
             }
         }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .main-text {
+        font-size: 16px;
+        line-height: 22px;
     }
 }

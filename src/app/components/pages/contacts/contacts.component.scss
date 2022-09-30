@@ -1,3 +1,4 @@
+@import "src/styles";
 @import "src/variables";
 
 :host {
@@ -8,7 +9,6 @@
 }
 
 .contacts-container {
-    justify-content: stretch;
     width: 100%;
     max-width: 1200px;
     padding: 24px;
@@ -47,5 +47,24 @@
     img {
         width: 100%;
         height: 100%;
+    }
+}
+@media all and (max-width: 1200px) {
+    .contacts-container {
+        @include addSpacingOfViewportFrame;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .contacts-container {
+        flex-direction: column;
+    }
+
+    .contact-item {
+        margin: 0 0 20px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
