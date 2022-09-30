@@ -120,3 +120,21 @@ a {
         }
     }
 }
+
+@media all and (max-width: 1024px) {
+    .main-text {
+        font-size: 20px;
+        line-height: 26px;
+
+        &.-text-divider {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            &:after {
+                bottom: -5px;
+                left: calc(50% - 5px);
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
